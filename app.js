@@ -12,9 +12,7 @@ app.use(bodyParser.json())
 const usersRoute = require('./routes/user')
 app.use('/users', usersRoute)
 
-app.get('/',(req,res) => {
-  app.use('/users', usersRoute)
-})
+
 
 mongoose.connect(
   process.env.MONGODB_URL,
