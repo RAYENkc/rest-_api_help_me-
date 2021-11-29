@@ -12,8 +12,8 @@ app.use(bodyParser.json())
 const usersRoute = require('./routes/user')
 app.use('/users', usersRoute)
 
-app.get('/',(req,res) => {
-    res.send('we are on home')
+app.get('*',(req,res) => {
+    res.sendFile(path.resolve(__dirname,'users'))
 })
 
 mongoose.connect(
